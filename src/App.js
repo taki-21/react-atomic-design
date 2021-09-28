@@ -9,7 +9,15 @@ import { UserCard } from "./components/organisms/user/UserCard";
 import { HeaderOnly } from "./components/templates/HeaderOnly";
 import { DefaultLayout } from "./components/templates/DefaultLayout";
 import { Router } from "./router/Router";
+import { UserProvider } from "./providers/UserProvider";
+import { RecoilRoot } from "recoil";
 
 export default function App() {
-  return <Router />;
+  return (
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>
+  );
 }
